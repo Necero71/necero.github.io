@@ -5,20 +5,52 @@
     box-sizing: border-box;
 }
 
+/* --- COLOR VARIABLES & DARK MODE FRAMEWORK --- */
+:root {
+    --bg-color: #f4f4f9;
+    --text-color: #333;
+    --header-bg: #fff;
+    --primary-color: #007BFF;
+    --primary-dark: #0056b3;
+    --heading-color: #1a253c;
+    --card-bg: #fff;
+    --footer-bg: #1a253c;
+    --footer-text: #fff;
+    --shadow: 0 2px 5px rgba(0,0,0,0.1);
+    --card-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.dark-mode {
+    /* YOUR TASK: FILL THESE IN */
+    --bg-color: #121212; /* Dark background */
+    --text-color: #e0e0e0; /* Light text */
+    --header-bg: #1e1e1e; /* Dark header */
+    --primary-color: #4A90E2; /* Slightly adjusted accent blue */
+    --primary-dark: #357ABD; /* Darker hover blue */
+    --heading-color: #f4f4f9; /* Light headings */
+    --card-bg: #1e1e1e; /* Dark card background */
+    --footer-bg: #0d0d0d; /* Darker footer */
+    --footer-text: #e0e0e0; /* Light footer text */
+    --shadow: 0 2px 5px rgba(0,0,0,0.3);
+    --card-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+/* ----------------------------------------------- */
+
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
+    background-color: var(--bg-color); /* Updated to variable */
+    color: var(--text-color); /* Updated to variable */
     line-height: 1.6;
     scroll-behavior: smooth;
+    transition: background-color 0.5s, color 0.5s; /* Smooth transition for dark mode */
 }
 
 h1, h2, h3 {
-    color: #1a253c;
+    color: var(--heading-color); /* Updated to variable */
 }
 
 a {
-    color: #007BFF;
+    color: var(--primary-color); /* Updated to variable */
     text-decoration: none;
 }
 
@@ -28,12 +60,12 @@ ul {
 
 /* Header & Navigation */
 header {
-    background: #fff;
+    background: var(--header-bg); /* Updated to variable */
     padding: 1rem 5%;
     position: sticky;
     top: 0;
     z-index: 100;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: var(--shadow); /* Updated to variable */
 }
 
 nav {
@@ -45,7 +77,7 @@ nav {
 nav .logo {
     font-size: 1.5rem;
     font-weight: 600;
-    color: #007BFF;
+    color: var(--primary-color); /* Updated to variable */
 }
 
 nav ul {
@@ -87,13 +119,13 @@ section h2 {
 
 #hero .subtitle {
     font-size: 1.2rem;
-    color: #555;
+    color: var(--text-color); /* Subtle change */
     margin-bottom: 2rem;
 }
 
 .cta-button {
-    background: #007BFF;
-    color: #fff;
+    background: var(--primary-color); /* Updated to variable */
+    color: var(--footer-text); /* Using footer-text for contrast white */
     padding: 0.8rem 1.5rem;
     border-radius: 5px;
     font-weight: 600;
@@ -101,7 +133,7 @@ section h2 {
 }
 
 .cta-button:hover {
-    background: #0056b3;
+    background: var(--primary-dark); /* Updated to variable */
     text-decoration: none;
 }
 
@@ -114,10 +146,10 @@ section h2 {
 }
 
 .project-card {
-    background: #fff;
+    background: var(--card-bg); /* Updated to variable */
     padding: 2rem;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: var(--card-shadow); /* Updated to variable */
     text-align: left;
     transition: transform 0.3s ease;
 }
@@ -153,6 +185,6 @@ section h2 {
 footer {
     text-align: center;
     padding: 2rem 0;
-    background-color: #1a253c;
-    color: #fff;
+    background-color: var(--footer-bg); /* Updated to variable */
+    color: var(--footer-text); /* Updated to variable */
 }
