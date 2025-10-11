@@ -88,6 +88,33 @@ nav ul {
 nav a:hover {
     text-decoration: underline;
 }
+/* Add this block to style.css, preferably near the 'nav' styles */
+nav ul li button {
+    /* Reset Button Defaults */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font-size: 1rem; /* Inherit font size from nav links */
+    color: var(--text-color); /* Use the body text color for better contrast */
+    transition: color 0.3s ease;
+    
+    /* Center the icon within the list item */
+    display: flex;
+    align-items: center;
+    height: 100%; /* Match the height of the nav links */
+}
+
+nav ul li button:hover {
+    color: var(--primary-color); /* Give it the same hover effect as the links */
+}
+
+/* Fix for nav ul layout if needed (ensures all items are aligned) */
+nav ul {
+    display: flex;
+    gap: 2rem;
+    align-items: center; /* Ensure all items, including the button, are vertically centered */
+}
 
 /* Sections */
 main {
@@ -187,4 +214,5 @@ footer {
     padding: 2rem 0;
     background-color: var(--footer-bg); /* Updated to variable */
     color: var(--footer-text); /* Updated to variable */
+
 }
