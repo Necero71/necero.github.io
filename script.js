@@ -7,7 +7,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
     const currentTheme = localStorage.getItem('theme');
 
+    // Logic to set the initial state without transition on first load
+    // The CSS transition should handle the fading when the class is toggled.
     if (currentTheme === 'dark' || (!currentTheme && prefersDarkScheme)) {
+        // We set the initial state
         body.classList.add('dark-mode');
     }
 
