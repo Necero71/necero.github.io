@@ -203,6 +203,49 @@ section h2 {
     margin-top: 1rem;
     font-weight: 600;
 }
+/* Update style.css. Remove the now useless video-item styles. */
+
+/* Gallery Grid Styling */
+.gallery-grid {
+    display: grid;
+    /* Create a dense grid that can fit 3 or 4 columns on desktop */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem; /* Tighter gap than projects */
+    margin-top: 2rem;
+    max-width: 1200px; /* Limit the width for better readability */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.gallery-item {
+    background: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    overflow: hidden;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--card-shadow);
+}
+
+/* Styling for the Images */
+.gallery-item.image-item {
+    padding: 0; /* Remove padding for images to fill the item */
+    /* Give the image item a fixed aspect ratio for a uniform grid */
+    aspect-ratio: 16 / 9; /* Common photo ratio (adjust if your photos are square) */
+}
+
+.gallery-item.image-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures images fill the space */
+    display: block;
+}
+
+/* --- REMOVED: .gallery-item.video-item and its inner styling is gone. --- */
 
 /* Contact Section */
 .social-links {
@@ -225,4 +268,5 @@ footer {
     color: var(--footer-text); /* Updated to variable */
 
 }
+
 
