@@ -36,36 +36,45 @@
 }
 /* ----------------------------------------------- */
 
+/* In style.css, update the body block */
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: var(--bg-color); /* Updated to variable */
-    color: var(--text-color); /* Updated to variable */
+    background-color: var(--bg-color);
+    color: var(--text-color);
     line-height: 1.6;
     scroll-behavior: smooth;
-    transition: background-color 0.5s, color 0.5s; /* Smooth transition for dark mode */
+    /* CHANGE 0.5s to 1.0s */
+    transition: background-color 1.0s, color 1.0s;
 }
 
-h1, h2, h3 {
-    color: var(--heading-color); /* Updated to variable */
+/* Add this new rule to smoothly transition other major blocks */
+header, footer, .project-card {
+    transition: background-color 1.0s, color 1.0s, box-shadow 1.0s;
 }
 
-a {
-    color: var(--primary-color); /* Updated to variable */
-    text-decoration: none;
+/* If you want the text colors (like h1, h2, etc.) to fade: */
+h1, h2, h3, nav ul li a, nav ul li button {
+    transition: color 1.0s;
 }
 
-ul {
-    list-style: none;
-}
-
-/* Header & Navigation */
+/* Ensure the background transition on header is 1.0s as well */
 header {
-    background: var(--header-bg); /* Updated to variable */
+    background: var(--header-bg);
     padding: 1rem 5%;
     position: sticky;
     top: 0;
     z-index: 100;
-    box-shadow: var(--shadow); /* Updated to variable */
+    box-shadow: var(--shadow);
+    transition: background-color 1.0s, box-shadow 1.0s; /* Ensure header has transition */
+}
+
+/* And the footer */
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+    transition: background-color 1.0s, color 1.0s; /* Ensure footer has transition */
 }
 
 nav {
@@ -216,3 +225,4 @@ footer {
     color: var(--footer-text); /* Updated to variable */
 
 }
+
