@@ -285,6 +285,71 @@ footer {
   background: var(--primary-color);
   border-radius: 4px;
 }
+@media (max-width: 600px) {
+  /* Layout changes for vertical phones */
+  main {
+    padding: 1rem;
+  }
+
+  header nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 1rem;
+  }
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+  }
+  nav ul li {
+    width: 100%;
+  }
+  nav ul li a,
+  nav ul li button {
+    width: 100%;
+    text-align: left;
+    padding: 1rem 0.5rem;
+    font-size: 1.1rem;
+  }
+
+  .cta-button {
+    width: 100%;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+  }
+
+  section {
+    padding: 1.5rem 0;
+    margin-bottom: 1rem;
+  }
+
+  .project-grid,
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+  }
+
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.5rem; }
+
+  .social-links {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  footer {
+    padding: 1rem 0;
+    font-size: 1rem;
+  }
+}
+
+
 
 
 
