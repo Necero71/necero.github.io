@@ -7,256 +7,285 @@
 
 /* --- COLOR VARIABLES & DARK MODE FRAMEWORK --- */
 :root {
-    --bg-color: #f4f4f9;
-    --text-color: #333;
-    --header-bg: #fff;
-    --primary-color: #007BFF;
-    --primary-dark: #0056b3;
-    --heading-color: #1a253c;
-    --card-bg: #fff;
-    --footer-bg: #1a253c;
-    --footer-text: #fff;
-    --shadow: 0 2px 5px rgba(0,0,0,0.1);
-    --card-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  --bg-color: #f4f4f9;
+  --text-color: #333;
+  --header-bg: #fff;
+  --primary-color: #007BFF;
+  --primary-dark: #0056b3;
+  --card-bg: #fff;
+  --heading-color: #1a253c;
+  --footer-bg: #1a253c;
+  --footer-text: #fff;
+  --shadow: 0 2px 5px rgba(0,0,0,0.1);
+  --card-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  --transition: 0.4s;
+  --space: 2rem;
+  --gap: 2rem;
 }
 
 .dark-mode {
-    /* YOUR TASK: FILL THESE IN */
-    --bg-color: #121212; /* Dark background */
-    --text-color: #e0e0e0; /* Light text */
-    --header-bg: #1e1e1e; /* Dark header */
-    --primary-color: #4A90E2; /* Slightly adjusted accent blue */
-    --primary-dark: #357ABD; /* Darker hover blue */
-    --heading-color: #f4f4f9; /* Light headings */
-    --card-bg: #1e1e1e; /* Dark card background */
-    --footer-bg: #0d0d0d; /* Darker footer */
-    --footer-text: #e0e0e0; /* Light footer text */
-    --shadow: 0 2px 5px rgba(0,0,0,0.3);
-    --card-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  --header-bg: #1e1e1e;
+  --primary-color: #4A90E2;
+  --primary-dark: #357ABD;
+  --card-bg: #1e1e1e;
+  --heading-color: #f4f4f9;
+  --footer-bg: #0d0d0d;
+  --footer-text: #e0e0e0;
+  --shadow: 0 2px 5px rgba(0,0,0,0.3);
+  --card-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
-/* ----------------------------------------------- */
 
-/* In style.css, update the body block */
+/* Resets and base styles */
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    line-height: 1.6;
-    scroll-behavior: smooth;
-    /* CHANGE 0.5s to 1.0s */
-    transition: background-color 1.0s, color 1.0s;
+  background: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+  transition: background-color var(--transition), color var(--transition);
 }
 
-/* Add this new rule to smoothly transition other major blocks */
-header, footer, .project-card {
-    transition: background-color 1.0s, color 1.0s, box-shadow 1.0s;
-}
-
-/* If you want the text colors (like h1, h2, etc.) to fade: */
-h1, h2, h3, nav ul li a, nav ul li button {
-    transition: color 1.0s;
-}
-
-/* Ensure the background transition on header is 1.0s as well */
 header {
-    background: var(--header-bg);
-    padding: 1rem 5%;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    box-shadow: var(--shadow);
-    transition: background-color 1.0s, box-shadow 1.0s; /* Ensure header has transition */
-}
-
-/* And the footer */
-footer {
-    text-align: center;
-    padding: 2rem 0;
-    background-color: var(--footer-bg);
-    color: var(--footer-text);
-    transition: background-color 1.0s, color 1.0s; /* Ensure footer has transition */
+  background: var(--header-bg);
+  color: var(--heading-color);
+  box-shadow: var(--shadow);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: background-color var(--transition), color var(--transition);
 }
 
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 var(--space);
 }
 
-nav .logo {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--primary-color); /* Updated to variable */
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--primary-color);
 }
 
 nav ul {
-    display: flex;
-    gap: 2rem;
+  list-style: none;
+  display: flex;
+  gap: 1rem;
 }
 
-nav a:hover {
-    text-decoration: underline;
-}
-/* Add this block to style.css, preferably near the 'nav' styles */
-nav ul li button {
-    /* Reset Button Defaults */
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    font-size: 1rem; /* Inherit font size from nav links */
-    color: var(--text-color); /* Use the body text color for better contrast */
-    transition: color 0.3s ease;
-    
-    /* Center the icon within the list item */
-    display: flex;
-    align-items: center;
-    height: 100%; /* Match the height of the nav links */
+nav ul li a, nav ul li button {
+  color: var(--heading-color);
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background var(--transition), color var(--transition);
 }
 
-nav ul li button:hover {
-    color: var(--primary-color); /* Give it the same hover effect as the links */
+nav ul li a:hover,
+nav ul li button:hover,
+nav ul li a:focus-visible,
+nav ul li button:focus-visible {
+  background: var(--primary-color);
+  color: var(--footer-text);
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
 }
 
-/* Fix for nav ul layout if needed (ensures all items are aligned) */
-nav ul {
-    display: flex;
-    gap: 2rem;
-    align-items: center; /* Ensure all items, including the button, are vertically centered */
+#dark-mode-toggle i {
+  pointer-events: none;
 }
 
-/* Sections */
 main {
-    padding: 2rem 5%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: var(--space);
 }
 
 section {
-    padding: 4rem 0;
-    text-align: center;
+  margin-bottom: var(--space);
+  padding: var(--space) 0;
 }
 
-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
+h1, h2, h3 {
+  color: var(--heading-color);
+  margin-bottom: 1rem;
+  font-weight: 600;
+  transition: color var(--transition);
 }
 
-/* Hero Section */
-#hero {
-    min-height: 80vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+h1 {
+  font-size: 2.5rem;
 }
 
-#hero h1 {
-    font-size: 3.5rem;
+h2 {
+  font-size: 2rem;
 }
 
-#hero .subtitle {
-    font-size: 1.2rem;
-    color: var(--text-color); /* Subtle change */
-    margin-bottom: 2rem;
+.subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
 }
 
 .cta-button {
-    background: var(--primary-color); /* Updated to variable */
-    color: var(--footer-text); /* Using footer-text for contrast white */
-    padding: 0.8rem 1.5rem;
-    border-radius: 5px;
-    font-weight: 600;
-    transition: background-color 0.3s ease;
+  display: inline-block;
+  background: var(--primary-color);
+  color: var(--footer-text);
+  padding: 0.6em 1.4em;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  margin-top: 1.5rem;
+  transition: background var(--transition), color var(--transition);
+  border: none;
 }
 
-.cta-button:hover {
-    background: var(--primary-dark); /* Updated to variable */
-    text-decoration: none;
+.cta-button:hover,
+.cta-button:focus-visible {
+  background: var(--primary-dark);
+  color: var(--footer-text);
+  outline: 2px solid var(--primary-dark);
+  outline-offset: 2px;
 }
 
-/* Update style.css. Ensure these rules are implemented correctly. */
-
-/* Projects Section */
 .project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gap);
 }
 
 .project-card {
-    background: var(--card-bg); /* Use card-bg variable */
-    padding: 2rem; /* Ensure project cards have their original padding */
-    border-radius: 8px;
-    box-shadow: var(--card-shadow);
-    text-align: left;
-    transition: transform 0.3s ease;
+  background: var(--card-bg);
+  box-shadow: var(--card-shadow);
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: background var(--transition), box-shadow var(--transition);
 }
 
-/* Gallery Grid Styling */
+.project-card h3 {
+  margin-bottom: 0.75rem;
+}
+
+.project-card a {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+.project-card a:hover,
+.project-card a:focus-visible {
+  color: var(--primary-dark);
+  outline: 2px solid var(--primary-color);
+}
+
+/* Gallery Styles */
 .gallery-grid {
-    display: grid;
-    /* Create a dense grid that can fit 3 or 4 columns on desktop */
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-    margin-top: 2rem;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.8rem;
 }
 
-.gallery-item {
-    background: var(--card-bg);
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    overflow: hidden;
-    /* REMOVED: text-align: left; which was causing issues */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: var(--card-shadow);
+  background: var(--card-bg);
+  transition: box-shadow var(--transition), transform var(--transition);
 }
 
-.gallery-item:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--card-shadow);
+.gallery-item img:hover,
+.gallery-item img:focus-visible {
+  box-shadow: 0 0 12px var(--primary-color);
+  transform: scale(1.025);
+  outline: 2px solid var(--primary-color);
 }
 
-/* Styling for the Images */
-/* NOTE: We make the image-item itself the container */
-.gallery-item.image-item {
-    padding: 0; /* Ensures images abut the edge */
-    text-align: center; /* Centers the image placeholder content */
-    aspect-ratio: 1 / 1; /* For uniform square photos. Adjust to 16/9 if needed. */
-    display: block; /* Ensure it respects grid space */
-}
-
-.gallery-item.image-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensures images fill the container */
-    display: block;
-}
-
-/* REMOVE all .gallery-item.video-item styles from your CSS file */
-
-/* Contact Section */
 .social-links {
-    margin-top: 1rem;
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
+  display: flex;
+  gap: 1rem;
 }
 
 .social-links a {
-    font-size: 1.1rem;
-    font-weight: 600;
+  background: var(--primary-color);
+  color: var(--footer-text);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: 600;
 }
 
-/* Footer */
+.social-links a:hover,
+.social-links a:focus-visible {
+  background: var(--primary-dark);
+}
+
 footer {
-    text-align: center;
-    padding: 2rem 0;
-    background-color: var(--footer-bg); /* Updated to variable */
-    color: var(--footer-text); /* Updated to variable */
-
+  background: var(--footer-bg);
+  color: var(--footer-text);
+  text-align: center;
+  padding: 1.5rem 0;
+  font-size: 1rem;
+  margin-top: 2rem;
+  box-shadow: var(--shadow);
+  transition: background var(--transition), color var(--transition);
 }
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .project-grid,
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  main {
+    padding: 1rem;
+  }
+  .project-grid,
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  section {
+    padding: 2rem 0;
+  }
+  nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  background: var(--bg-color);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 4px;
+}
+
 
 
 
