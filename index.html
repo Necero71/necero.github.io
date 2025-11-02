@@ -1,65 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Necero Mavromatis | Rookie Coder</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Necero Mavromatis | Rookie Coder</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
+  <header>
+    <nav aria-label="Main navigation">
+      <div class="logo">NM</div>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li>
+          <button id="dark-mode-toggle" aria-label="Toggle dark mode" aria-pressed="false">
+            <i class="fas fa-lightbulb"></i>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </header>
 
-    <header>
-        <nav>
-            <div class="logo">NM</div> 
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><button id="dark-mode-toggle" aria-label="Toggle dark mode"><i class="fas fa-lightbulb"></i></button></li>
-            </ul>
-        </nav>
-    </header>
+  <main>
+    <section id="hero">
+      <h1>Hi, I'm Necero Mavromatis</h1>
+      <p class="subtitle">A passionate rookie developer building web applications.</p>
+      <a href="#projects" class="cta-button">View My Work</a>
+    </section>
 
-    <main>
-        <section id="hero">
-            <h1>Hi, I'm Necero Mavromatis</h1>
-            <p class="subtitle">A passionate rookie developer building web applications.</p>
-            <a href="#projects" class="cta-button">View My Work</a>
-        </section>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        Hello! I'm a rookie developer based in South Africa, with a passion for creating clean, user-friendly websites and applications. I'm currently learning JS and CSS and I'm excited to apply my skills to new challenges. When I'm not coding, I enjoy gaming.
+      </p>
+    </section>
 
-        <section id="about">
-            <h2>About Me</h2>
-            <p>
-                Hello! I'm a rookie developer based in South Africa, with a passion for creating clean, user-friendly websites and applications. I'm currently learning JS and CSS and I'm excited to apply my skills to new challenges. When I'm not coding, I enjoy Gaming.
-            </p>
-        </section>
+    <section id="projects">
+      <h2>My Projects</h2>
+      <div class="project-grid">
+        <div class="project-card">
+          <h3>Personal Portfolio Website</h3>
+          <p>Digital resume and a showcase for my work.</p>
+          <a href="#" target="_blank">View Project</a>
+        </div>
+        <div class="project-card">
+          <h3>Sim-Track Saga</h3>
+          <p>An interactive timeline charting my development from casual sim racer to competitive driver, focusing on milestones and specific track data. Built using HTML, CSS, and interactive JavaScript features.</p>
+          <a href="#" target="_blank">View Project (Coming Soon)</a>
+        </div>
+      </div>
+    </section>
 
-        <section id="projects">
-            <h2>My Projects</h2>
-           
-            <div class="project-grid">
-                <div class="project-card">
-                    <h3>Personal Portfolio Website</h3>
-                    <p> digital resume and a showcase for my work.</p>
-                    <a href="#" target="_blank">View Project</a>
-                </div>
-                
-                <div class="project-card">
-                    <h3>Sim-Track Saga</h3>
-                    <p>An interactive timeline charting my development from casual sim racer to competitive driver, focusing on milestones and specific track data. Built using HTML, CSS, and interactive JavaScript features.</p>
-                    <a href="#" target="_blank">View Project (Coming Soon)</a>
-                </div>
-                
-            </div>
-        </section>
-
-       <section id="gallery">
-    <h2>Digital Assets</h2>
-    <p>A collection of screenshots from my sim rig and development journey.</p>
-    <div class="gallery-grid">
+    <section id="gallery">
+      <h2>Digital Assets</h2>
+      <p>A collection of screenshots from my sim rig and development journey.</p>
+      <div class="gallery-grid">
+        <!-- Each img already has a descriptive alt attribute, which is perfect for accessibility! -->
         <div class="gallery-item image-item"><img src="https://i.ibb.co/fd3BdSw/ACC-Stats.png" alt="Assetto Corsa Competizione Stats Screen"></div>
         <div class="gallery-item image-item"><img src="https://i.ibb.co/BHy1XT5/Amg-Bathurst.png" alt="AMG GT3 racing at Bathurst"></div>
         <div class="gallery-item image-item"><img src="https://i.ibb.co/SwJWsMf/Amg-Bathurst-2.png" alt="Second shot of AMG GT3 at Bathurst"></div>
@@ -72,25 +73,26 @@
         <div class="gallery-item image-item"><img src="https://i.ibb.co/TxB82nx/Belgium-F1-2.png" alt="Second F1 car shot at Spa-Francorchamps"></div>
         <div class="gallery-item image-item"><img src="https://i.ibb.co/N2TnZtRS/F3.png" alt="Formula 3 car screenshot"></div>
         <div class="gallery-item image-item"><img src="https://i.ibb.co/WpGcPgcz/F3-2.png" alt="Second Formula 3 car screenshot"></div>
-    </div>
-</section>
+      </div>
+    </section>
 
-        <section id="contact">
-            <h2>Get In Touch</h2>
-            <p>I'm currently open to new opportunities. Feel free to reach out!</p>
-            <div class="social-links">
-                <a href="https://github.com/Necero71" target="_blank">GitHub</a>
-            </div>
-        </section>
-    </main>
+    <section id="contact">
+      <h2>Get In Touch</h2>
+      <p>I'm currently open to new opportunities. Feel free to reach out!</p>
+      <div class="social-links">
+        <a href="https://github.com/Necero71" target="_blank">GitHub</a>
+      </div>
+    </section>
+  </main>
 
-    <footer>
-        <p>&copy; 2025 Necero Mavromatis. All rights reserved.</p>
-    </footer>
-
-    <script src="script.js"></script>
+  <footer>
+    <p>© 2025 Necero Mavromatis. All rights reserved.</p>
+  </footer>
+  <script src="script.js"></script>
 </body>
 </html>
+
+
 
 
 
