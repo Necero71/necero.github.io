@@ -61,7 +61,7 @@ You can view the site live:
 ## 🙌 Contact
 
 Found a bug, want to collaborate, or just say hi?  
-Email: [your.email@example.com]  
+Email: [neceroxloud71@gmail.com]  
 GitHub: [Necero71](https://github.com/Necero71)
 
 ---
