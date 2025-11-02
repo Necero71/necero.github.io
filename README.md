@@ -27,7 +27,7 @@ This site showcases my growth as a rookie coder, my web projects, and my journey
 ## 📂 Live Site
 
 You can view the site live:  
-[https://necero71.github.io/](https://necero71.github.io/)
+[https://necero71.github.io/necero.github.io/]
 
 ---
 
