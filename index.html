@@ -14,8 +14,9 @@
             --border-color: #30363d;
             --text-primary: #c9d1d9;
             --text-secondary: #8b949e;
-            --accent-color: #58a6ff;
-            --accent-glow: rgba(88, 166, 255, 0.15);
+            /* Switched to a tactical olive/coyote accent vibe */
+            --accent-color: #8da366; 
+            --accent-glow: rgba(141, 163, 102, 0.15);
         }
 
         * {
@@ -68,53 +69,86 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            border-left: 3px solid var(--accent-color);
+            padding-left: 0.75rem;
         }
 
-        .projects-grid {
+        /* Work Experience Styles */
+        .experience-item {
+            margin-bottom: 1.5rem;
+            padding-left: 1rem;
+            border-left: 1px solid var(--border-color);
+            position: relative;
+        }
+
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            left: -4px;
+            top: 6px;
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background-color: var(--accent-color);
+        }
+
+        .job-title {
+            font-weight: 600;
+            color: #ffffff;
+            font-size: 1.1rem;
+        }
+
+        .job-meta {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Grid for Projects / Self-Taught */
+        .grid-layout {
             display: grid;
             grid-template-columns: 1fr;
             gap: 1rem;
         }
 
         @media(min-width: 600px) {
-            .projects-grid {
+            .grid-layout {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
 
-        .project-card {
+        .card {
             background-color: var(--surface-color);
             border: 1px solid var(--border-color);
             border-radius: 8px;
             padding: 1.25rem;
             transition: all 0.2s ease;
-            text-decoration: none;
-            color: inherit;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
         }
 
-        .project-card:hover {
+        .card:hover {
             border-color: var(--accent-color);
             box-shadow: 0 0 15px var(--accent-glow);
             transform: translateY(-2px);
         }
 
-        .project-title {
+        .card-title {
             font-weight: 600;
             font-size: 1.1rem;
             color: #ffffff;
             margin-bottom: 0.5rem;
         }
 
-        .project-desc {
+        .card-desc {
             font-size: 0.9rem;
             color: var(--text-secondary);
             margin-bottom: 1rem;
         }
 
-        .project-tags {
+        .card-tags {
             font-family: 'JetBrains Mono', monospace;
             font-size: 0.75rem;
             color: var(--accent-color);
@@ -156,26 +190,59 @@
 
         <section>
             <h2>About</h2>
-            <p>Building functional systems, tinkering with code and hardware, and crafting clean digital experiences. Focused on performance, efficiency, and open-source tooling.</p>
+            <p>Building functional systems, tinkering with code and hardware, and crafting clean digital experiences. Focused on performance, efficiency, and hands-on technical problem solving.</p>
         </section>
 
         <section>
-            <h2>Featured Projects</h2>
-            <div class="projects-grid">
-                <a href="https://github.com/Necero71" target="_blank" class="project-card">
+            <h2>Professional Experience</h2>
+            
+            <div class="experience-item">
+                <div class="job-title">Network & Hardware Technician (Update Title)</div>
+                <div class="job-meta">Company Name | 202X — Present</div>
+                <p class="card-desc">Deploying and configuring wireless networking hardware, including Cambium Networks ePMP systems and smart antennas. Handling hardware assembly, system diagnostics, and field deployment.</p>
+            </div>
+
+            <div class="experience-item">
+                <div class="job-title">Previous Role (Update Title)</div>
+                <div class="job-meta">Previous Company | 202X — 202X</div>
+                <p class="card-desc">Brief description of your daily responsibilities, tools you used, and problems you solved here.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Self-Taught & Lab Experience</h2>
+            <div class="grid-layout">
+                <div class="card">
                     <div>
-                        <div class="project-title">Portfolio Site</div>
-                        <div class="project-desc">Static GitHub Pages portfolio designed for speed and clean typography.</div>
+                        <div class="card-title">Linux Systems & Homelabbing</div>
+                        <div class="card-desc">Extensive experience configuring and managing Linux environments (Mint, CachyOS, Fedora). Deploying containerized services via Docker (Immich, CasaOS) and configuring secure remote access with Tailscale.</div>
                     </div>
-                    <div class="project-tags">HTML / CSS</div>
-                </a>
-                <a href="https://github.com/Necero71" target="_blank" class="project-card">
+                    <div class="card-tags">Linux / Docker / Networking</div>
+                </div>
+
+                <div class="card">
                     <div>
-                        <div class="project-title">Custom Tooling</div>
-                        <div class="project-desc">Scripts and configs built for system optimization and workflow management.</div>
+                        <div class="card-title">Hardware Modding & Diagnostics</div>
+                        <div class="card-desc">Salvaging and repurposing hardware components, including All-in-One PC motherboards. Modifying cooling setups, bypassing damaged display outputs, and executing custom firmware flashing via ADB.</div>
                     </div>
-                    <div class="project-tags">Bash / Python</div>
-                </a>
+                    <div class="card-tags">Hardware / Firmware / Diagnostics</div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <div class="card-title">Game Server Administration</div>
+                        <div class="card-desc">Building and maintaining cross-platform multiplayer servers utilizing Crafty Controller and Playit.gg network tunneling to handle custom permissions and secure routing.</div>
+                    </div>
+                    <div class="card-tags">Servers / Routing / Linux</div>
+                </div>
+                
+                <div class="card">
+                    <div>
+                        <div class="card-title">Digital Media & Sim Setup</div>
+                        <div class="card-desc">Configuring complex force feedback profiles, hardware calibration, and video production software (OBS, OpenShot). Designing custom visual identities and liveries for sim racing teams.</div>
+                    </div>
+                    <div class="card-tags">Hardware / Media / Configuration</div>
+                </div>
             </div>
         </section>
 
