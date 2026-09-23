@@ -8,13 +8,27 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
+        /* Base Light Theme */
         :root {
+            --bg-color: #f6f8fa;
+            --surface-color: #ffffff;
+            --border-color: #d0d7de;
+            --heading-color: #24292f;
+            --text-primary: #24292f;
+            --text-secondary: #57606a;
+            --accent-color: #657b46; /* Darker olive for light mode */
+            --accent-glow: rgba(101, 123, 70, 0.15);
+        }
+
+        /* Dark Theme Override (Triggered by your Script.js) */
+        body.dark-mode {
             --bg-color: #0d1117;
             --surface-color: #161b22;
             --border-color: #30363d;
+            --heading-color: #ffffff;
             --text-primary: #c9d1d9;
             --text-secondary: #8b949e;
-            --accent-color: #8da366; 
+            --accent-color: #8da366; /* Tactical olive */
             --accent-glow: rgba(141, 163, 102, 0.15);
         }
 
@@ -30,6 +44,7 @@
             color: var(--text-primary);
             line-height: 1.6;
             padding: 2rem 1rem;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         .container {
@@ -41,19 +56,41 @@
             margin-bottom: 3rem;
             border-bottom: 1px solid var(--border-color);
             padding-bottom: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
         }
 
         h1 {
             font-size: 2.5rem;
             font-weight: 600;
-            color: #ffffff;
+            color: var(--heading-color);
             margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
         }
 
         .tagline {
             font-family: 'JetBrains Mono', monospace;
             color: var(--accent-color);
             font-size: 0.95rem;
+        }
+
+        /* Toggle Button Styles */
+        #dark-mode-toggle {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            transition: all 0.2s ease;
+        }
+
+        #dark-mode-toggle:hover {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
         }
 
         section {
@@ -63,13 +100,14 @@
         h2 {
             font-size: 1.25rem;
             font-weight: 600;
-            color: #ffffff;
+            color: var(--heading-color);
             margin-bottom: 1.25rem;
             display: flex;
             align-items: center;
             gap: 0.5rem;
             border-left: 3px solid var(--accent-color);
             padding-left: 0.75rem;
+            transition: color 0.3s ease;
         }
 
         .experience-item {
@@ -92,8 +130,9 @@
 
         .job-title {
             font-weight: 600;
-            color: #ffffff;
+            color: var(--heading-color);
             font-size: 1.1rem;
+            transition: color 0.3s ease;
         }
 
         .job-meta {
@@ -135,8 +174,9 @@
         .card-title {
             font-weight: 600;
             font-size: 1.1rem;
-            color: #ffffff;
+            color: var(--heading-color);
             margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
         }
 
         .card-desc {
@@ -181,8 +221,12 @@
 <body>
     <div class="container">
         <header>
-            <h1>N. Mavromatis</h1>
-            <p class="tagline">&gt; system.engineer // builder // creator</p>
+            <div>
+                <h1>N. Mavromatis</h1>
+                <p class="tagline">&gt; system.engineer // builder // creator</p>
+            </div>
+            <!-- Added the toggle button here -->
+            <button id="dark-mode-toggle" aria-label="Toggle Theme" aria-pressed="false">Theme</button>
         </header>
 
         <section>
@@ -255,5 +299,8 @@
             <p>&copy; 2026 N. Mavromatis. All rights reserved.</p>
         </footer>
     </div>
+
+    <!-- Link your JS file right at the bottom -->
+    <script src="Script.js"></script>
 </body>
 </html>
