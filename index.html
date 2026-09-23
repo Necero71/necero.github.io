@@ -1,101 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Necero Mavromatis | Rookie Coder</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N. Mavromatis — Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0d1117;
+            --surface-color: #161b22;
+            --border-color: #30363d;
+            --text-primary: #c9d1d9;
+            --text-secondary: #8b949e;
+            --accent-color: #58a6ff;
+            --accent-glow: rgba(88, 166, 255, 0.15);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        header {
+            margin-bottom: 3rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 2rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+        }
+
+        .tagline {
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--accent-color);
+            font-size: 0.95rem;
+        }
+
+        section {
+            margin-bottom: 3rem;
+        }
+
+        h2 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+        @media(min-width: 600px) {
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .project-card {
+            background-color: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.25rem;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .project-card:hover {
+            border-color: var(--accent-color);
+            box-shadow: 0 0 15px var(--accent-glow);
+            transform: translateY(-2px);
+        }
+
+        .project-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .project-tags {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--accent-color);
+        }
+
+        .links-list {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .links-list a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .links-list a:hover {
+            color: var(--accent-color);
+        }
+
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding-top: 1.5rem;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <nav aria-label="Main navigation">
-      <div class="logo">NM</div>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li>
-          <button id="dark-mode-toggle" aria-label="Toggle dark mode" aria-pressed="false">
-            <i class="fas fa-lightbulb"></i>
-          </button>
-        </li>
-      </ul>
-    </nav>
-  </header>
+    <div class="container">
+        <header>
+            <h1>N. Mavromatis</h1>
+            <p class="tagline">&gt; system.engineer // builder // creator</p>
+        </header>
 
-  <main>
-    <section id="hero">
-      <h1>Hi, I'm Necero Mavromatis</h1>
-      <p class="subtitle">A passionate rookie developer building web applications.</p>
-      <a href="#projects" class="cta-button">View My Work</a>
-    </section>
+        <section>
+            <h2>About</h2>
+            <p>Building functional systems, tinkering with code and hardware, and crafting clean digital experiences. Focused on performance, efficiency, and open-source tooling.</p>
+        </section>
 
-    <section id="about">
-      <h2>About Me</h2>
-      <p>
-        Hello! I'm a rookie developer based in South Africa, with a passion for creating clean, user-friendly websites and applications. I'm currently learning JS and CSS and I'm excited to apply my skills to new challenges. When I'm not coding, I enjoy gaming.
-      </p>
-    </section>
+        <section>
+            <h2>Featured Projects</h2>
+            <div class="projects-grid">
+                <a href="https://github.com/Necero71" target="_blank" class="project-card">
+                    <div>
+                        <div class="project-title">Portfolio Site</div>
+                        <div class="project-desc">Static GitHub Pages portfolio designed for speed and clean typography.</div>
+                    </div>
+                    <div class="project-tags">HTML / CSS</div>
+                </a>
+                <a href="https://github.com/Necero71" target="_blank" class="project-card">
+                    <div>
+                        <div class="project-title">Custom Tooling</div>
+                        <div class="project-desc">Scripts and configs built for system optimization and workflow management.</div>
+                    </div>
+                    <div class="project-tags">Bash / Python</div>
+                </a>
+            </div>
+        </section>
 
-    <section id="projects">
-      <h2>My Projects</h2>
-      <div class="project-grid">
-        <div class="project-card">
-          <h3>Personal Portfolio Website</h3>
-          <p>Digital resume and a showcase for my work.</p>
-          <a href="#" target="_blank">View Project</a>
-        </div>
-        <div class="project-card">
-          <h3>Sim-Track Saga</h3>
-          <p>An interactive timeline charting my development from casual sim racer to competitive driver, focusing on milestones and specific track data. Built using HTML, CSS, and interactive JavaScript features.</p>
-          <a href="#" target="_blank">View Project (Coming Soon)</a>
-        </div>
-      </div>
-    </section>
+        <section>
+            <h2>Connect</h2>
+            <ul class="links-list">
+                <li><a href="https://github.com/Necero71" target="_blank">GitHub</a></li>
+                <li><a href="mailto:your-email@example.com">Email</a></li>
+            </ul>
+        </section>
 
-    <section id="gallery">
-      <h2>Digital Assets</h2>
-      <p>A collection of screenshots from my sim rig and development journey.</p>
-      <div class="gallery-grid">
-        <!-- Each img already has a descriptive alt attribute, which is perfect for accessibility! -->
-        <div class="gallery-item image-item"><img src="https://i.ibb.co/fd3BdSw/ACC-Stats.png" alt="Assetto Corsa Competizione Stats Screen"></div>
-        <div class="gallery-item image-item"><img src="https://i.ibb.co/BHy1XT5/Amg-Bathurst.png" alt="AMG GT3 racing at Bathurst"></div>
-        <div class="gallery-item image-item"><img src="https://i.ibb.co/SwJWsMf/Amg-Bathurst-2.png" alt="Second shot of AMG GT3 at Bathurst"></div>
-        <div class="gallery-item image-item"><img src="https://i.ibb.co/5hpgjWw/Amg-Bathurst-3.png" alt="Third shot of AMG GT3 at Bathurst"></div>
-        <div class="gallery-item image-item"><img src="https://i.ibb.co/Xfw48HN/BMW.png" alt="BMW race car screenshot"></div>
-        <div class="gallery-item image-item"><img src="https://i.ibb.co/4w4KpSp/BMW-2.png" alt="Second BMW race car screenshot"></div>
-        <div class="gallery-item image-item"><img src="https://i.ibb.co/JRW2mGv/BMW-3.png" alt="Third BMW race car screenshot"></div>
-        <div class="gallery-item image-item"><img src="https://i.ibb.co/bjdr0k8/BMW-4.png" alt="Fourth BMW race car screenshot"></div>
-        <div class="gallery-item image-item"><img src="https://i.ibb.co/xKzVbSV/Belgium-F1.png" alt="Formula 1 car at Spa-Francorchamps, Belgium"></div>
-        <div class="gallery-item image-item"><img src="https://i.ibb.co/TxB82nx/Belgium-F1-2.png" alt="Second F1 car shot at Spa-Francorchamps"></div>
-        <div class="gallery-item image-item"><img src="https://i.ibb.co/N2TnZtRS/F3.png" alt="Formula 3 car screenshot"></div>
-        <div class="gallery-item image-item"><img src="https://i.ibb.co/WpGcPgcz/F3-2.png" alt="Second Formula 3 car screenshot"></div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <h2>Get In Touch</h2>
-      <p>I'm currently open to new opportunities. Feel free to reach out!</p>
-      <div class="social-links">
-        <a href="https://github.com/Necero71" target="_blank">GitHub</a>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <p>© 2025 Necero Mavromatis. All rights reserved.</p>
-  </footer>
-  <script src="script.js"></script>
+        <footer>
+            <p>&copy; 2026 N. Mavromatis. All rights reserved.</p>
+        </footer>
+    </div>
 </body>
 </html>
-
-
-
-
-
-
-
-
