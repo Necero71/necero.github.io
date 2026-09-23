@@ -301,6 +301,33 @@
     </div>
 
     <!-- Link your JS file right at the bottom -->
-    <script src="script.js"></script>
+        <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggleButton = document.getElementById('dark-mode-toggle');
+            
+            // Just a quick console check so we know the script is actually running
+            console.log("Script loaded, looking for button...", toggleButton);
+            
+            if (!toggleButton) return; 
+            
+            const body = document.body;
+            const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
+            const currentTheme = localStorage.getItem('theme');
+            
+            // Set initial theme
+            if (currentTheme === 'dark' || (!currentTheme && prefersDarkScheme)) {
+                body.classList.add('dark-mode');
+                toggleButton.setAttribute('aria-pressed', 'true');
+            }
+            
+            toggleButton.addEventListener('click', () => {
+                const enabled = body.classList.toggle('dark-mode');
+                localStorage.setItem('theme', enabled ? 'dark' : 'light');
+                toggleButton.setAttribute('aria-pressed', enabled);
+                console.log("Theme toggled! Current class list:", body.className);
+            });
+        });
+    </script>
 </body>
 </html>
+
