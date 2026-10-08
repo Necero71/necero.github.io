@@ -7,216 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    <style>
-        /* Base Light Theme */
-        :root {
-            --bg-color: #f6f8fa;
-            --surface-color: #ffffff;
-            --border-color: #d0d7de;
-            --heading-color: #24292f;
-            --text-primary: #24292f;
-            --text-secondary: #57606a;
-            --accent-color: #657b46; /* Darker olive for light mode */
-            --accent-glow: rgba(101, 123, 70, 0.15);
-        }
-
-        /* Dark Theme Override (Triggered by your Script.js) */
-        body.dark-mode {
-            --bg-color: #0d1117;
-            --surface-color: #161b22;
-            --border-color: #30363d;
-            --heading-color: #ffffff;
-            --text-primary: #c9d1d9;
-            --text-secondary: #8b949e;
-            --accent-color: #8da366; /* Tactical olive */
-            --accent-glow: rgba(141, 163, 102, 0.15);
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-primary);
-            line-height: 1.6;
-            padding: 2rem 1rem;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        header {
-            margin-bottom: 3rem;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 600;
-            color: var(--heading-color);
-            margin-bottom: 0.5rem;
-            transition: color 0.3s ease;
-        }
-
-        .tagline {
-            font-family: 'JetBrains Mono', monospace;
-            color: var(--accent-color);
-            font-size: 0.95rem;
-        }
-
-        /* Toggle Button Styles */
-        #dark-mode-toggle {
-            background: transparent;
-            border: 1px solid var(--border-color);
-            color: var(--text-primary);
-            padding: 0.5rem 1rem;
-            border-radius: 6px;
-            cursor: pointer;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.85rem;
-            transition: all 0.2s ease;
-        }
-
-        #dark-mode-toggle:hover {
-            border-color: var(--accent-color);
-            color: var(--accent-color);
-        }
-
-        section {
-            margin-bottom: 3rem;
-        }
-
-        h2 {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: var(--heading-color);
-            margin-bottom: 1.25rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            border-left: 3px solid var(--accent-color);
-            padding-left: 0.75rem;
-            transition: color 0.3s ease;
-        }
-
-        .experience-item {
-            margin-bottom: 1.5rem;
-            padding-left: 1rem;
-            border-left: 1px solid var(--border-color);
-            position: relative;
-        }
-
-        .experience-item::before {
-            content: '';
-            position: absolute;
-            left: -4px;
-            top: 6px;
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            background-color: var(--accent-color);
-        }
-
-        .job-title {
-            font-weight: 600;
-            color: var(--heading-color);
-            font-size: 1.1rem;
-            transition: color 0.3s ease;
-        }
-
-        .job-meta {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-            margin-bottom: 0.5rem;
-        }
-
-        .grid-layout {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1rem;
-        }
-
-        @media(min-width: 600px) {
-            .grid-layout {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        .card {
-            background-color: var(--surface-color);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 1.25rem;
-            transition: all 0.2s ease;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .card:hover {
-            border-color: var(--accent-color);
-            box-shadow: 0 0 15px var(--accent-glow);
-            transform: translateY(-2px);
-        }
-
-        .card-title {
-            font-weight: 600;
-            font-size: 1.1rem;
-            color: var(--heading-color);
-            margin-bottom: 0.5rem;
-            transition: color 0.3s ease;
-        }
-
-        .card-desc {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            margin-bottom: 1rem;
-        }
-
-        .card-tags {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.75rem;
-            color: var(--accent-color);
-        }
-
-        .links-list {
-            list-style: none;
-            display: flex;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-        }
-
-        .links-list a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-
-        .links-list a:hover {
-            color: var(--accent-color);
-        }
-
-        footer {
-            border-top: 1px solid var(--border-color);
-            padding-top: 1.5rem;
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-            text-align: center;
-        }
-    </style>
+    <link rel="stylesheet" href="Style.css">
 </head>
 <body>
     <div class="container">
@@ -225,7 +16,6 @@
                 <h1>N. Mavromatis</h1>
                 <p class="tagline">&gt; system.engineer // builder // creator</p>
             </div>
-            <!-- Added the toggle button here -->
             <button id="dark-mode-toggle" aria-label="Toggle Theme" aria-pressed="false">Theme</button>
         </header>
 
@@ -236,7 +26,7 @@
 
         <section>
             <h2>Professional Experience</h2>
-            
+
             <div class="experience-item">
                 <div class="job-title">Operations Assistant — IVC, CCTV, IT, POS, BWC</div>
                 <div class="job-meta">TMT | 2025 — Present</div>
@@ -276,7 +66,7 @@
                     </div>
                     <div class="card-tags">Servers / Routing / Linux</div>
                 </div>
-                
+
                 <div class="card">
                     <div>
                         <div class="card-title">Digital Media & Sim Setup</div>
@@ -300,34 +90,6 @@
         </footer>
     </div>
 
-    <!-- Link your JS file right at the bottom -->
-        <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const toggleButton = document.getElementById('dark-mode-toggle');
-            
-            // Just a quick console check so we know the script is actually running
-            console.log("Script loaded, looking for button...", toggleButton);
-            
-            if (!toggleButton) return; 
-            
-            const body = document.body;
-            const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
-            const currentTheme = localStorage.getItem('theme');
-            
-            // Set initial theme
-            if (currentTheme === 'dark' || (!currentTheme && prefersDarkScheme)) {
-                body.classList.add('dark-mode');
-                toggleButton.setAttribute('aria-pressed', 'true');
-            }
-            
-            toggleButton.addEventListener('click', () => {
-                const enabled = body.classList.toggle('dark-mode');
-                localStorage.setItem('theme', enabled ? 'dark' : 'light');
-                toggleButton.setAttribute('aria-pressed', enabled);
-                console.log("Theme toggled! Current class list:", body.className);
-            });
-        });
-    </script>
+    <script src="Script.js"></script>
 </body>
 </html>
-
