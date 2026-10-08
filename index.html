@@ -3,90 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>N. Mavromatis — Portfolio</title>
+    <title>N. Mavromatis — Operations & Systems</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="Style.css">
 </head>
 <body>
     <div class="container">
+        <!-- Header & Top Branding -->
         <header>
-            <div>
+            <div class="brand">
+                <div class="status-indicator">
+                    <span class="status-dot"></span>
+                    <span class="status-text">SYSTEMS_ONLINE // CAPE TOWN</span>
+                </div>
                 <h1>N. Mavromatis</h1>
-                <p class="tagline">&gt; system.engineer // builder // creator</p>
+                <p class="tagline">&gt; system.engineer // hardware.lab // operations</p>
             </div>
-            <button id="dark-mode-toggle" aria-label="Toggle Theme" aria-pressed="false">Theme</button>
+            <button id="dark-mode-toggle" aria-label="Toggle Theme" aria-pressed="false">[ TOGGLE_THEME ]</button>
         </header>
 
-        <section>
-            <h2>About</h2>
-            <p>Building functional systems, tinkering with code and hardware, and crafting clean digital experiences. Focused on performance, efficiency, and hands-on technical problem solving.</p>
-        </section>
-
-        <section>
-            <h2>Professional Experience</h2>
-
-            <div class="experience-item">
-                <div class="job-title">Operations Assistant — IVC, CCTV, IT, POS, BWC</div>
-                <div class="job-meta">TMT | 2025 — Present</div>
-                <p class="card-desc">Managing deployment, diagnostics, and daily operational support across a wide range of hardware infrastructure, including In-Vehicle Cameras, CCTV networks, IT systems, Point of Sale terminals, and Body-Worn Cameras.</p>
-            </div>
-
-            <div class="experience-item">
-                <div class="job-title">CEO (Self-Employed)</div>
-                <div class="job-meta">Nanovision | 2023 — 2025</div>
-                <p class="card-desc">Founded and operated an independent business venture, handling all aspects of daily management, project execution, and strategic direction.</p>
+        <!-- About Section -->
+        <section class="section-about">
+            <h2><span class="prefix">//</span> About</h2>
+            <p class="bio">
+                Operations Specialist and Systems Tinkerer focused on enterprise IT, field hardware deployment, and custom Linux infrastructure. Driven by practical problem-solving, hardware diagnostics, and building clean, high-performance digital systems.
+            </p>
+            <div class="skills-chips">
+                <span class="chip">CCTV &amp; IVC Systems</span>
+                <span class="chip">POS Infrastructure</span>
+                <span class="chip">Linux Administration</span>
+                <span class="chip">Docker &amp; Homelabbing</span>
+                <span class="chip">Hardware Diagnostics</span>
             </div>
         </section>
 
-        <section>
-            <h2>Self-Taught & Lab Experience</h2>
+        <!-- Professional Experience -->
+        <section class="section-experience">
+            <h2><span class="prefix">//</span> Professional Operations</h2>
+
+            <div class="experience-item">
+                <div class="job-header">
+                    <div class="job-title">Operations Assistant — IVC, CCTV, IT, POS, BWC</div>
+                    <div class="job-meta">TMT | 2025 — Present</div>
+                </div>
+                <p class="experience-desc">
+                    Managing deployment, diagnostics, and daily operational support across critical hardware infrastructure. Overseeing In-Vehicle Cameras (IVC), CCTV network systems, Point of Sale terminals, and Body-Worn Camera (BWC) deployments.
+                </p>
+            </div>
+
+            <div class="experience-item">
+                <div class="job-header">
+                    <div class="job-title">CEO / Independent Technical Director</div>
+                    <div class="job-meta">Nanovision | 2023 — 2025</div>
+                </div>
+                <p class="experience-desc">
+                    Founded and operated an independent tech service venture. Led project delivery, system implementations, client management, and hardware maintenance solutions.
+                </p>
+            </div>
+        </section>
+
+        <!-- Interactive Lab & Projects Showcase -->
+        <section class="section-lab">
+            <h2><span class="prefix">//</span> Lab & Specializations</h2>
+
+            <!-- Interactive Filter Controls -->
+            <div class="filter-bar">
+                <button class="filter-btn active" data-filter="all">All Systems</button>
+                <button class="filter-btn" data-filter="linux">Linux &amp; Servers</button>
+                <button class="filter-btn" data-filter="hardware">Hardware Modding</button>
+                <button class="filter-btn" data-filter="media">Sim &amp; Media</button>
+            </div>
+
             <div class="grid-layout">
-                <div class="card">
+                <div class="card" data-category="linux">
                     <div>
-                        <div class="card-title">Linux Systems & Homelabbing</div>
-                        <div class="card-desc">Extensive experience configuring and managing Linux environments (Mint, CachyOS, Fedora). Deploying containerized services via Docker (Immich, CasaOS) and configuring secure remote access with Tailscale.</div>
+                        <div class="card-header">
+                            <span class="card-icon">⚡</span>
+                            <div class="card-title">Linux Systems &amp; Homelabbing</div>
+                        </div>
+                        <p class="card-desc">Configuring performance-tuned Linux builds (Mint, CachyOS, Fedora). Containerizing services with Docker (Immich, CasaOS) and establishing encrypted mesh networks via Tailscale.</p>
                     </div>
-                    <div class="card-tags">Linux / Docker / Networking</div>
+                    <div class="card-tags">
+                        <span class="tag">Linux</span>
+                        <span class="tag">Docker</span>
+                        <span class="tag">Tailscale</span>
+                    </div>
                 </div>
 
-                <div class="card">
+                <div class="card" data-category="hardware">
                     <div>
-                        <div class="card-title">Hardware Modding & Diagnostics</div>
-                        <div class="card-desc">Salvaging and repurposing hardware components, including All-in-One PC motherboards. Modifying cooling setups, bypassing damaged display outputs, and executing custom firmware flashing via ADB.</div>
+                        <div class="card-header">
+                            <span class="card-icon">🔧</span>
+                            <div class="card-title">Hardware Modding &amp; Diagnostics</div>
+                        </div>
+                        <p class="card-desc">Component-level salvaging and motherboard conversion. Custom cooling setup modifications, display bypasses, board diagnostics, and custom device firmware flashing via ADB.</p>
                     </div>
-                    <div class="card-tags">Hardware / Firmware / Diagnostics</div>
+                    <div class="card-tags">
+                        <span class="tag">Hardware</span>
+                        <span class="tag">ADB</span>
+                        <span class="tag">Diagnostics</span>
+                    </div>
                 </div>
 
-                <div class="card">
+                <div class="card" data-category="linux">
                     <div>
-                        <div class="card-title">Game Server Administration</div>
-                        <div class="card-desc">Building and maintaining cross-platform multiplayer servers utilizing Crafty Controller and Playit.gg network tunneling to handle custom permissions and secure routing.</div>
+                        <div class="card-header">
+                            <span class="card-icon">🌐</span>
+                            <div class="card-title">Game Server Infrastructure</div>
+                        </div>
+                        <p class="card-desc">Administering dedicated cross-platform game servers. Utilizing Crafty Controller and Playit.gg tunneling for secure WAN exposure without dynamic DNS exposure.</p>
                     </div>
-                    <div class="card-tags">Servers / Routing / Linux</div>
+                    <div class="card-tags">
+                        <span class="tag">Servers</span>
+                        <span class="tag">Networking</span>
+                        <span class="tag">Playit.gg</span>
+                    </div>
                 </div>
 
-                <div class="card">
+                <div class="card" data-category="media">
                     <div>
-                        <div class="card-title">Digital Media & Sim Setup</div>
-                        <div class="card-desc">Configuring complex force feedback profiles, hardware calibration, and video production software (OBS, OpenShot). Designing custom visual identities and liveries for sim racing teams.</div>
+                        <div class="card-header">
+                            <span class="card-icon">🏎️</span>
+                            <div class="card-title">Sim Calibration &amp; Custom Livery Design</div>
+                        </div>
+                        <p class="card-desc">Telemetry configuration, custom force-feedback profiles, and sim racing hardware tuning. Crafting tactical vehicle liveries and managing streaming/recording pipelines in OBS.</p>
                     </div>
-                    <div class="card-tags">Hardware / Media / Configuration</div>
+                    <div class="card-tags">
+                        <span class="tag">Sim Racing</span>
+                        <span class="tag">OBS</span>
+                        <span class="tag">Visual Design</span>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section>
-            <h2>Connect</h2>
-            <ul class="links-list">
-                <li><a href="https://github.com/Necero71" target="_blank">GitHub</a></li>
-                <li><a href="mailto:your-email@example.com">Email</a></li>
-            </ul>
+        <!-- Connect Section -->
+        <section class="section-connect">
+            <h2><span class="prefix">//</span> Connect</h2>
+            <div class="connect-grid">
+                <a href="https://github.com/Necero71" target="_blank" rel="noopener" class="connect-card">
+                    <span class="connect-title">GitHub</span>
+                    <span class="connect-sub">github.com/Necero71</span>
+                </a>
+                <a href="mailto:your-email@example.com" class="connect-card">
+                    <span class="connect-title">Direct Email</span>
+                    <span class="connect-sub">Contact via email</span>
+                </a>
+            </div>
         </section>
 
         <footer>
-            <p>&copy; 2026 N. Mavromatis. All rights reserved.</p>
+            <p>&copy; 2026 N. Mavromatis. Tactical Systems &amp; Operations.</p>
         </footer>
     </div>
 
